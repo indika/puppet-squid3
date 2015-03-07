@@ -52,11 +52,6 @@ class squid3 (
     default => $template,
   }
 
-  if ! empty($config_hash) and $use_template == 'long' {
-    fail('$config_hash does not (yet) work with the "long" template!')
-  }
-
-
   package { 'squid3_package': ensure => installed, name => $package_name }
 
   service { 'squid3_service':
